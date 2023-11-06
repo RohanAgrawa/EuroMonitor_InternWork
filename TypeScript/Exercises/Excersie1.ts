@@ -1,14 +1,3 @@
-
-// let user : {
-
-//     accountNo: number,
-//     name: string,
-//     location: string,
-//     state: string,
-//     country: string,
-//     balance : string
-// }
-
 class user{
 
     accountNo: string;
