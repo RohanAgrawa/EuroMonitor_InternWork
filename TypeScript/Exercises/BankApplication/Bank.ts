@@ -1,9 +1,10 @@
-let accountInformation = new Map();
+
 import displayMenu from "./BankMenu";
 import { r } from "../input"
 import CustomerDetail from "./BankUser";
 import BankApi from "./BankApi";
 
+let accountInformation = new Map();
 export default class Bank implements BankApi{
 
     public createAccount(accountMode: string): void{
@@ -188,7 +189,7 @@ export default class Bank implements BankApi{
                         
                         const balanceInAccount = accountInformation.get(accountNumber).balance;
 
-                        const typeofAccount = accountInformation.get(accountNumber).type;
+                        const typeofAccount = accountInformation.get(accountNumber).accountType;
 
                         const remainingBalance = balanceInAccount - parseInt(amountWithdraw);
 
@@ -264,7 +265,7 @@ export default class Bank implements BankApi{
 
                 console.log("Customer Name :- " + accountDetails.name);
                 console.log("Customer Name :- " + accountDetails.email);
-                console.log("Customer Account Type :- " + accountDetails.type);
+                console.log("Customer Account Type :- " + accountDetails.accountType);
                 console.log("Balance in Account :- " + accountDetails.balance);
                 displayMenu();
             }

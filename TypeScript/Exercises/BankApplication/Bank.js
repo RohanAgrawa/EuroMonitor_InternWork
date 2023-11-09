@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var accountInformation = new Map();
 var BankMenu_1 = require("./BankMenu");
 var input_1 = require("../input");
 var BankUser_1 = require("./BankUser");
+var accountInformation = new Map();
 var Bank = /** @class */ (function () {
     function Bank() {
     }
@@ -138,7 +138,7 @@ var Bank = /** @class */ (function () {
                 input_1.r.question("Enter Amount to Withdraw :- ", function (amountWithdraw) {
                     if (parseInt(amountWithdraw) >= 1) {
                         var balanceInAccount = accountInformation.get(accountNumber).balance;
-                        var typeofAccount = accountInformation.get(accountNumber).type;
+                        var typeofAccount = accountInformation.get(accountNumber).accountType;
                         var remainingBalance = balanceInAccount - parseInt(amountWithdraw);
                         if (typeofAccount == "Saving") {
                             if (remainingBalance < 500) {
@@ -188,7 +188,7 @@ var Bank = /** @class */ (function () {
                 var accountDetails = accountInformation.get(accountNumber);
                 console.log("Customer Name :- " + accountDetails.name);
                 console.log("Customer Name :- " + accountDetails.email);
-                console.log("Customer Account Type :- " + accountDetails.type);
+                console.log("Customer Account Type :- " + accountDetails.accountType);
                 console.log("Balance in Account :- " + accountDetails.balance);
                 (0, BankMenu_1.default)();
             }
